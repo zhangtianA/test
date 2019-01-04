@@ -9,7 +9,7 @@
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-appid="100229030" data-redirecturi="http://qzonestyle.gtimg.cn/qzone/openapi/redirect-1.0.1.html" data-xx-oo="xxoo"></script>-->
     <script type="text/javascript"  charset="utf-8"
             src="https://connect.qq.com/qc_jssdk.js"
-            data-appid="101537105"
+            data-appid="100229030"
     ></script>
     <!--<script type="text/javascript" src="https://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100229030" charset="utf-8"></script>-->
 </head>
@@ -27,14 +27,16 @@
     };
 
     const bbb = ()=>{
-        document.getElementById("qqLoginBtn").childNodes[0].click();
+        alert(1)
+        document.getElementById("qqLoginBtn").childNodes[0]&&document.getElementById("qqLoginBtn").childNodes[0].click();
     };
     QC.Login({
         btnId:"qqLoginBtn"	//插入按钮的节点id
     }, (e)=>{
         document.getElementsByTagName("span")[1].innerHTML = e.nickname;
     });
-    setTimeout(bbb, 1000)
+    window.onload = bbb;
+
 
     //    let time, count = 0;
     //    const login = () => {
