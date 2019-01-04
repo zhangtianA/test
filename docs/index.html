@@ -15,11 +15,13 @@
 </head>
 <body onclick="bbb()">
 <span id="qqLoginBtn" style="display: none"></span>昵称：<span></span>
+<a id="a" href="https://www.baidu.com/">1111111</a>
 <!--<div onclick="aaa()">33333333</div>-->
 <!--<iframe width="100%" height="500px" src="https://kxt-portal.9itest.com/frontend/cms/user/authorization/login?platform=QQ"></iframe>-->
 </body>
 
 <script type="text/javascript">
+    document.getElementById("a").click();
     const aaa = ()=>{
         const u = 'https://graph.qq.com/oauth2.0/authorize?client_id=101537105&response_type=token&scope=all&redirect_uri=http%3A%2F%2Fqzonestyle.gtimg.cn%2Fqzone%2Fopenapi%2Fredirect-1.0.1.html'
         window.location.href = u;
@@ -27,7 +29,6 @@
     };
 
     const bbb = ()=>{
-        alert(document.getElementById("qqLoginBtn").childNodes[0])
         document.getElementById("qqLoginBtn").childNodes[0]&&document.getElementById("qqLoginBtn").childNodes[0].click();
     };
     QC.Login({
@@ -35,7 +36,7 @@
     }, (e)=>{
         document.getElementsByTagName("span")[1].innerHTML = e.nickname;
     });
-    window.onload = bbb;
+//    bbb();
 
 
     //    let time, count = 0;
