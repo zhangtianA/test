@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="shortcut icon" href="./111.jpg">
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101541988" data-redirecturi="http://qzonestyle.gtimg.cn/qzone/openapi/redirect-1.0.1.html" charset="utf-8"></script>-->
     <!--<script src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101537105"></script>-->
     <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" charset="utf-8" data-appid="100229030" data-redirecturi="http://qzonestyle.gtimg.cn/qzone/openapi/redirect-1.0.1.html" data-xx-oo="xxoo"></script>-->
@@ -29,6 +30,7 @@
 
     let time, count = 0;
     const login = () => {
+        console.log(11)
         if(QC.Login.check()){
             //已登录，获取用户信息
             QC.api("get_user_info")
