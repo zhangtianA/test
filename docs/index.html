@@ -14,13 +14,9 @@
     <!--<script type="text/javascript" src="https://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100229030" charset="utf-8"></script>-->
 </head>
 <body>
-<!--<span id="qqLoginBtn"></span>-->
-<!--<script type="text/javascript">-->
-    <!--QC.Login({-->
-        <!--btnId:"qqLoginBtn"	//插入按钮的节点id-->
-    <!--});-->
-<!--</script>-->
-<div onclick="login()">2222222</div>
+<span id="qqLoginBtn"></span>昵称：<span></span>
+<!--<div onclick="aaa()">33333333</div>-->
+<!--<iframe width="100%" height="500px" src="https://kxt-portal.9itest.com/frontend/cms/user/authorization/login?platform=QQ"></iframe>-->
 </body>
 
 <script type="text/javascript">
@@ -28,36 +24,41 @@
 //        window.open('https://graph.qq.com/oauth2.0/authorize?client_id=101537105&response_type=token&scope=all&redirect_uri=http%3A%2F%2Fqzonestyle.gtimg.cn%2Fqzone%2Fopenapi%2Fredirect-1.0.1.html');
 //    };
 
-    let time, count = 0;
-    const login = () => {
-        if(QC.Login.check()){
-            //已登录，获取用户信息
-            QC.api("get_user_info")
-                .success(function(s){//成功回调
-                    localStorage.setItem('qqUser',JSON.stringify(s.data));
-                    clearInterval(time);
-                    document.getElementsByTagName("div")[0].innerHTML = s.data.nickname;
-                })
-                .error(function(f){//失败回调
-                    clearInterval(time);
-                    alert("获取用户信息失败！");
-                });
+    QC.Login({
+        btnId:"qqLoginBtn"	//插入按钮的节点id
+    }, (e)=>{
+        document.getElementsByTagName("span")[1].innerHTML = e.nickname;
+    });
 
-        }else{
-            //未登录，直接打开QQ登录弹窗
-            if(!count){
-                QC.Login.showPopup({
-                    appId:"101537105",
-                    redirectURI:"http://qzonestyle.gtimg.cn/qzone/openapi/redirect-1.0.1.html"
-                });
-                count ++;
-            }
-        }
-    };
-//    time = setInterval(()=>{
+//    let time, count = 0;
+//    const login = () => {
+//        if(QC.Login.check()){
+//            //已登录，获取用户信息
+//            QC.api("get_user_info")
+//                .success(function(s){//成功回调
+//                    localStorage.setItem('qqUser',JSON.stringify(s.data));
+//                    clearInterval(time);
+//                    document.getElementsByTagName("div")[0].innerHTML = s.data.nickname;
+//                })
+//                .error(function(f){//失败回调
+//                    clearInterval(time);
+//                    alert("获取用户信息失败！");
+//                });
+//
+//        }else{
+//            //未登录，直接打开QQ登录弹窗
+//            if(!count){
+//                QC.Login.showPopup({
+//                    appId:"101537105",
+//                    redirectURI:"http://qzonestyle.gtimg.cn/qzone/openapi/redirect-1.0.1.html"
+//                });
+//                count ++;
+//            }
+//        }
+//    };
+//        time = setInterval(()=>{
+//            login();
+//        }, 1000);
 //        login();
-//    }, 1000);
-//    login();
-window.open('https://open.weixin.qq.com/connect/qrconnect?appid=wx50a2ce128ee2c417&redirect_uri='+`${location.protocol}//${location.host}/course/period/live/5345`+'&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect');
 </script>
 </html>
