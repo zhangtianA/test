@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <title>index01</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        video::-webkit-media-controls-panel {
+            display:none !important;
+            z-index:-1 !important;
+        }
+        video{
+            width: 100%;
+        }
+        .videobox{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="videobox" ontouchmove="return false;">
+    <video
+            id="mainvideo"
+            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+            x5-video-player-fullscreen="true"
+            x5-video-orientation="portraint"
+            x-webkit-airplay="true"
+            playsinline
+            webkit-playsinline
+            x5-playsinline
+            style="object-fit:fill"
+    ></video>
+    <button onclick="videoPlay()">播放</button>
+</div>
+<script>
+    const video = document.querySelector("#mainvideo");
+    let videoPlay = () => {
+        video.play();
+    };
+</script>
+</body>
+</html>
