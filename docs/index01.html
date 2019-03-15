@@ -20,9 +20,19 @@
         }
         video{
             width: 100%;
+            position: relative;
         }
         .videobox{
             position: relative;
+        }
+        video::after{
+            content: "123456";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #ffcf00;
         }
     </style>
 </head>
