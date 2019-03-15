@@ -21,20 +21,19 @@
         video{
             width: 100%;
         }
+        .videobox{
+            position: relative;
+        }
     </style>
 </head>
 <body>
 <div class="videobox" ontouchmove="return false;">
     <video id="mainvideo" src="./movie.ogg" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
+    <button onclick="videoPlay()">播放</button>
 </div>
-<button onclick="videoPlay()">播放</button>
 <script>
     const video = document.querySelector("#mainvideo");
-    window.onresize = function(){
-        video.style.width = window.innerWidth + "px";
-        video.style.height = window.innerHeight + "px";
-    };
-    window.onresize();
+
     let videoPlay = () => {
         video.play();
     };
