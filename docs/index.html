@@ -33,7 +33,11 @@
 </div>
 <script>
     const video = document.querySelector("#mainvideo");
-
+    window.onresize = function(){
+        video.style.width = window.innerWidth + "px";
+        video.style.height = window.innerHeight + "px";
+    }
+    window.onresize();
     let videoPlay = () => {
         video.play();
     };
