@@ -10,11 +10,12 @@
             top: 0;
             left: 0;
         }
-        video::media-controls-panel {
-            display:none !important;
-        }
         video::-webkit-media-controls-panel {
             display:none !important;
+            z-index:-1 !important;
+        }
+        video{
+            width: 100%;
         }
     </style>
 </head>
