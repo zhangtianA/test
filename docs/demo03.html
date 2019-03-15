@@ -6,6 +6,11 @@
     <title>demo03</title>
     <script src="https://cdn.plyr.io/3.5.2/plyr.js"></script>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.5.2/plyr.css" />
+    <style>
+        video{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div class="container" style="width:100%">
@@ -44,6 +49,8 @@
     </div>
 </div>
 <script>
+//    const video=document.getElementById("video");
+//    video.controls=false;
     document.addEventListener('DOMContentLoaded', () => {
         // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
         const player = new Plyr('#player');
