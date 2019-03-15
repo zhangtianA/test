@@ -4,77 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <title>index</title>
-    <script src='./chimee-mobile-player.browser.js'></script>
-    <link rel="./chimee-mobile-player.browser.css" />
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        /*button{*/
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*left: 0;*/
-        /*}*/
-        /*video::-webkit-media-controls-panel {*/
-            /*display:none !important;*/
-            /*z-index:-1 !important;*/
-        /*}*/
-        /*video{*/
-            /*width: 100%;*/
-        /*}*/
-        /*.videobox{*/
-            /*position: relative;*/
-        /*}*/
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        video::-webkit-media-controls-panel {
+            display:none !important;
+            z-index:-1 !important;
+        }
+        video{
+            width: 100%;
+        }
+        .videobox{
+            position: relative;
+        }
     </style>
 </head>
 <body>
-<!--<div class="videobox" ontouchmove="return false;">-->
-    <!--&lt;!&ndash;<video&ndash;&gt;-->
-            <!--&lt;!&ndash;id="mainvideo"&ndash;&gt;-->
-            <!--&lt;!&ndash;src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"&ndash;&gt;-->
-            <!--&lt;!&ndash;x5-video-player-type="h5"&ndash;&gt;-->
-            <!--&lt;!&ndash;x5-video-player-fullscreen="true"&ndash;&gt;-->
-            <!--&lt;!&ndash;playsinline="true"&ndash;&gt;-->
-            <!--&lt;!&ndash;webkit-playsinline="true"&ndash;&gt;-->
-            <!--&lt;!&ndash;preload="auto"&ndash;&gt;-->
-    <!--&lt;!&ndash;&gt;</video>&ndash;&gt;-->
-    <!--<video-->
-            <!--id="mainvideo"-->
-            <!--src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"-->
-            <!--poster="./01.jpg"-->
-            <!--preload="auto"-->
-            <!--webkit-playsinline="true"-->
-            <!--playsinline="true"-->
-            <!--x-webkit-airplay="allow"-->
-            <!--x5-video-player-type="h5"-->
-            <!--x5-video-player-fullscreen="true"-->
-            <!--x5-video-orientation="portraint"-->
-            <!--style="object-fit:fill">-->
-    <!--&gt;</video>-->
-    <!--<button onclick="videoPlay()">播放</button>-->
-<!--</div>-->
-<!--<script>-->
-    <!--const video = document.querySelector("#mainvideo");-->
-    <!--let videoPlay = () => {-->
-        <!--video.play();-->
-    <!--};-->
-<!--</script>-->
-<div id="wrapper"></div>
+<div class="videobox" ontouchmove="return false;">
+    <video
+            id="mainvideo"
+            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            x5-video-orientation="portraint"
+            playsinline
+            webkit-playsinline
+            style="object-fit:fill"
+    ></video>
+    <button onclick="videoPlay()">播放</button>
+</div>
 <script>
-    new ChimeeMobilePlayer({
-        wrapper: '#wrapper',  // video dom容器
-        src: 'http://cdn.toxicjohann.com/lostStar.mp4',
-        autoplay: true,
-        controls: true,
-        playsInline: true,
-        preload: 'auto',
-        x5VideoPlayerFullscreen: true,
-        x5VideoOrientation: 'landscape|portrait',
-        xWebkitAirplay: true,
-        muted: true,
-        // removeInnerPlugins: ['chimeeMobiControlbar', 'chimeeState'] // 需要移除的插件
-    });
+    const video = document.querySelector("#mainvideo");
+    let videoPlay = () => {
+        video.play();
+    };
 </script>
 </body>
 </html>
