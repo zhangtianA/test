@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <title>index</title>
     <style>
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        video::media-controls-panel {
+            display:none !important;
+        }
         video::-webkit-media-controls-panel {
             display:none !important;
         }
@@ -11,7 +20,7 @@
 </head>
 <body>
 <div class="videobox" ontouchmove="return false;">
-    <video id="mainvideo" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline webkit-playsinline></video>
+    <video id="mainvideo" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
 </div>
 <button onclick="videoPlay()">播放</button>
 <script>
