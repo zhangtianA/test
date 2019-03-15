@@ -15,6 +15,7 @@
 <body>
 <div class="container" style="width:100%">
     <video
+            controls
             crossorigin
             poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
             id="player"
@@ -49,8 +50,6 @@
     </div>
 </div>
 <script>
-//    const video=document.getElementById("video");
-//    video.controls=false;
     document.addEventListener('DOMContentLoaded', () => {
         // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
         const player = new Plyr('#player');
