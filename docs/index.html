@@ -20,9 +20,12 @@
         }
         video{
             width: 100%;
+            height: 200px;
         }
         .videobox{
             position: relative;
+            height: 500px;
+            background-color: #a0bdd0;
         }
     </style>
 </head>
@@ -41,7 +44,7 @@
 <script>
     const video = document.querySelector("#mainvideo");
     window.onresize=function () {
-        alert(video.clientHeight);
+//        alert(video.clientHeight);
     };
     let videoPlay = () => {
         video.play();
