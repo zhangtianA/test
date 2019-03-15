@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <title>index</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         button{
             position: absolute;
             top: 0;
@@ -21,12 +25,17 @@
 </head>
 <body>
 <div class="videobox" ontouchmove="return false;">
-    <video id="mainvideo" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
+    <video id="mainvideo" src="./movie.ogg" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
 </div>
 <button onclick="videoPlay()">播放</button>
 <script>
+    const video = document.querySelector("#mainvideo");
+    window.onresize = function(){
+        video.style.width = window.innerWidth + "px";
+        video.style.height = window.innerHeight + "px";
+    };
+    window.onresize();
     let videoPlay = () => {
-        const video = document.querySelector("#mainvideo");
         video.play();
     };
 </script>
