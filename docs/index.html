@@ -32,8 +32,6 @@
             id="mainvideo"
             src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
             x5-video-player-type="h5"
-            x5-video-orientation="landscape|portrait"
-            x-webkit-airplay="true"
             playsinline
             webkit-playsinline
             x5-playsinline
@@ -42,6 +40,9 @@
 </div>
 <script>
     const video = document.querySelector("#mainvideo");
+    window.onresize=function () {
+        alert(video.clientHeight);
+    };
     let videoPlay = () => {
         video.play();
     };
