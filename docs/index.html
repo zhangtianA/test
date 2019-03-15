@@ -28,16 +28,32 @@
 </head>
 <body>
 <div class="videobox" ontouchmove="return false;">
-    <video id="mainvideo" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
+    <!--<video-->
+            <!--id="mainvideo"-->
+            <!--src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"-->
+            <!--x5-video-player-type="h5"-->
+            <!--x5-video-player-fullscreen="true"-->
+            <!--playsinline="true"-->
+            <!--webkit-playsinline="true"-->
+            <!--preload="auto"-->
+    <!--&gt;</video>-->
+    <video
+            id="mainvideo"
+            src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+            poster="./01.jpg"
+            preload="auto"
+            webkit-playsinline="true"
+            playsinline="true"
+            x-webkit-airplay="allow"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            x5-video-orientation="portraint"
+            style="object-fit:fill">
+    ></video>
     <button onclick="videoPlay()">播放</button>
 </div>
 <script>
     const video = document.querySelector("#mainvideo");
-    window.onresize = function(){
-        video.style.width = window.innerWidth + "px";
-        video.style.height = window.innerHeight + "px";
-    }
-    window.onresize();
     let videoPlay = () => {
         video.play();
     };
